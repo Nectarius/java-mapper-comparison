@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <configuration>
+        <date-format>yyyy-MM-dd</date-format>
+
+    </configuration>
+
+
+    <mapping type="one-way">
+        <class-a>tea.domain.WhiteTea</class-a>
+        <class-b>view.WhiteTeaView
+        </class-b>
+
+        <field>
+            <a>type</a>
+            <b>type</b>
+            <a-hint>tea.domain.WhiteTeaType</a-hint>
+            <b-hint>tea.domain.WhiteTeaType</b-hint>
+        </field>
+
+    </mapping>
+
+    <mapping type="one-way" map-id="for-employee">
+        <class-a>tea.domain.BlackTea</class-a>
+        <class-b>view.BlackTeaView</class-b>
+        <field custom-converter="tea.dozer.EmployeeUserCustomConverter" custom-converter-param="Unknown user">
+            <a>registeredBy</a>
+            <b>registeredBy</b>
+        </field>
+    </mapping>
+
+    <mapping type="one-way" map-id="for-customer">
+        <class-a>tea.domain.BlackTea</class-a>
+        <class-b>view.BlackTeaView</class-b>
+        <field-exclude>
+            <a>registeredBy</a>
+            <b>registeredBy</b>
+        </field-exclude>
+    </mapping>
+    
+
+
+
+
+</mappings>

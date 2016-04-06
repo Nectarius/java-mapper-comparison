@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmapper>
+
+    <class name="view.BlackTeaView">
+
+        <global>
+
+        </global>
+        <conversion name="conversion" from="registeredBy" to="registeredBy" type="DYNAMIC">
+            return ${source} == null ? "Unknown user" : ${source}.getName();
+        </conversion>
+    </class>
+
+
+</jmapper>

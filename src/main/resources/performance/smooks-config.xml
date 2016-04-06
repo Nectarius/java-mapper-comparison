@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd" 
+                      xmlns:core="http://www.milyn.org/xsd/smooks/smooks-core-1.3.xsd"
+                      xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd"
+                      xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.4.xsd">
+
+   <!-- <core:filterSettings type="SAX" />-->
+
+    <jb:bean beanId="orderDTO" class="performance.dto.OrderDTO" createOnElement="performance.tea.domain.Order">
+
+
+        <jb:wiring property="products" beanIdRef="products" />
+
+        <jb:value property="customerName" data="customer/name" />
+
+        <jb:value property="billingStreetAddress" data="customer/billingAddress/street" />
+
+        <jb:value property="billingCity" data="customer/billingAddress/city" />
+
+        <jb:value property="shippingStreetAddress" data="customer/shippingAddress/street" />
+
+        <jb:value property="shippingCity" data="customer/shippingAddress/city" />
+
+    </jb:bean>
+
+    <jb:bean beanId="products" class="java.util.ArrayList" createOnElement="products">
+        <jb:wiring beanIdRef="productDto" />
+    </jb:bean>
+
+
+    <jb:bean beanId="productDto" class="performance.dto.ProductDTO" createOnElement="performance.tea.domain.Product">
+        <jb:value property="name" data="name" />
+    </jb:bean>
+
+
+
+</smooks-resource-list>

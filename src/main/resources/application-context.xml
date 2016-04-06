@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:component-scan base-package="tea.service"/>
+    <context:component-scan base-package="tea.repository"/>
+    <context:component-scan base-package="tea.mapstruct"/>
+
+    <bean id="dozerBeanMapper" class="org.dozer.DozerBeanMapper">
+        <property name="mappingFiles">
+            <list>
+                <value>dozer-configuration.xml</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="modelMapper"
+          class="tea.modelmapper.ModelMapperFactory">
+    </bean>
+
+    <bean id="jmapper" class="com.googlecode.jmapper.JMapper">
+        <constructor-arg><value>view.BlackTeaView</value></constructor-arg>
+        <constructor-arg><value>tea.domain.BlackTea</value></constructor-arg>
+
+        <constructor-arg><value>jmapper-configuration.xml</value></constructor-arg>
+    </bean>
+
+    <bean id="mapperFacade"
+          class="tea.orika.OrikaMapperFactory">
+    </bean>
+
+
+
+</beans>

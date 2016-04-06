@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmapper>
+
+    <class name="performance.dto.ProductDTO">
+        <attribute name="name">
+            <value name="name"/>
+        </attribute>
+    </class>
+
+    <class name="performance.dto.OrderDTO">
+
+        <attribute name="products">
+            <value name="products"/>
+        </attribute>
+
+        <attribute name="customerName">
+           <value name="${customer.name}"/>
+        </attribute>
+
+        <attribute name="billingStreetAddress">
+            <value name="${customer.billingAddress.street}"/>
+        </attribute>
+
+        <attribute name="billingCity">
+            <value name="${customer.billingAddress.city}"/>
+        </attribute>
+
+        <attribute name="shippingStreetAddress">
+            <value name="${customer.shippingAddress.street}"/>
+        </attribute>
+
+        <attribute name="shippingCity">
+            <value name="${customer.shippingAddress.city}"/>
+        </attribute>
+
+    </class>
+</jmapper>
