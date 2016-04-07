@@ -6,7 +6,7 @@
 
    <!-- <core:filterSettings type="SAX" />-->
 
-    <jb:bean beanId="orderDTO" class="performance.dto.OrderDTO" createOnElement="performance.tea.domain.Order">
+    <jb:bean beanId="orderDTO" class="performance.dto.OrderDTO" createOnElement="performance.domain.Order">
 
 
         <jb:wiring property="products" beanIdRef="products" />
