@@ -2,10 +2,12 @@ package view;
 
 /**
  * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * 
+ *  { for external condition example }
+ *  
  * @since 03 April 2016
  */
 public class BlackTeaView {
-
 
     private String variety;
 

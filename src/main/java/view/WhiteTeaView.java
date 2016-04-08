@@ -4,21 +4,28 @@ package view;
 
 /**
  * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ *  { for Constants Example }
+ * 
  * @since 29 March 2016
  */
 public class WhiteTeaView {
-
-    private String manufacturerCountry;
 
     private String description;
 
     private String content;
 
-    private String commentary;
+    // constant
+    private String variety;
 
+    public String getVariety() {
+		return variety;
+	}
 
+	public void setVariety(String variety) {
+		this.variety = variety;
+	}
 
-    public String getDescription() {
+	public String getDescription() {
         return description;
     }
 
@@ -33,24 +40,6 @@ public class WhiteTeaView {
     public void setContent(String content) {
         this.content = content;
     }
-
-    public String getCommentary() {
-        return commentary;
-    }
-
-    public void setCommentary(String commentary) {
-        this.commentary = commentary;
-    }
-
-    public String getManufacturerCountry() {
-        return manufacturerCountry;
-    }
-
-    public void setManufacturerCountry(String manufacturerCountry) {
-        this.manufacturerCountry = manufacturerCountry;
-    }
-
-
 
 
 }
