@@ -1,6 +1,7 @@
 package tea.service;
 
 import view.BlackTeaView;
+import view.GreenTeaView;
 import view.WhiteTeaView;
 
 /**
@@ -13,5 +14,8 @@ public interface TeaService {
 
 
      BlackTeaView findBlackTeaView(Long id);
+
+     GreenTeaView findGreenTea(Long id);
+
 
 }

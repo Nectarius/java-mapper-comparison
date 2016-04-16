@@ -25,7 +25,7 @@ import view.BlackTeaView;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/application-context.xml" })
-public class BlackTeaServiceTest {
+public class BlackTeaTest {
 
 	@Autowired
 	@Qualifier("teaServiceMapStructImpl")
@@ -36,6 +36,14 @@ public class BlackTeaServiceTest {
 	 * @Autowired
 	 * 
 	 * @Qualifier("teaServiceJMapperImpl")
+	 * 
+	 * @InjectMocks private TeaService teaService;
+	 */
+	
+	/*
+	 * @Autowired
+	 * 
+	 * @Qualifier("teaServiceDozerImpl")
 	 * 
 	 * @InjectMocks private TeaService teaService;
 	 */
@@ -71,8 +79,6 @@ public class BlackTeaServiceTest {
 
 	@Test
 	public void externalConditionTest() {
-
-		// http://stackoverflow.com/questions/858519/constants-in-dozer-mappings
 
 		BlackTeaView blackTeaView = teaService.findBlackTeaView(25l);
 

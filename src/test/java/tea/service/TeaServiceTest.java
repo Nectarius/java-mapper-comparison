@@ -21,7 +21,7 @@ public class TeaServiceTest {
     @Qualifier("teaServiceDozerImpl")
     private TeaService teaService;*/
 
-   @Autowired
+    @Autowired
     @Qualifier("teaServiceMapStructImpl")
     private TeaService teaService;
 

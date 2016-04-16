@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tea.domain.BlackTea;
+import tea.domain.GreenTea;
 import tea.domain.WhiteTea;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
 import view.BlackTeaView;
+import view.GreenTeaView;
 import view.WhiteTeaView;
 
 /**
@@ -50,5 +52,13 @@ public class TeaServiceModelMapperImpl implements TeaService {
 
         return blackTeaView;
     }
+
+	@Override
+	public GreenTeaView findGreenTea(Long id) {
+		
+		GreenTea greenTea = fakeTeaRepository.findOneGreenTea(id);
+		
+		return modelMapper.map(greenTea, GreenTeaView.class);
+	}
 
 }

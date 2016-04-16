@@ -2,7 +2,6 @@ package tea.domain;
 
 public class GreenTea extends Item {
 	
-	
 	 private String variety;
 	 
 	 private String sourceRegion;
@@ -10,7 +9,26 @@ public class GreenTea extends Item {
 	 private String sourceCountry;
 	 
 
-	 public String getSourceRegion() {
+	public GreenTea withVariety(String variety){
+		this.variety = variety;
+        return this;
+	}
+	
+	public GreenTea withSourceRegion(String region){
+		this.sourceRegion = region;
+        return this;
+	}
+	
+	public GreenTea withSourceCountry(String sourceCountry){
+		this.sourceCountry = sourceCountry;
+        return this;
+	}
+
+	public GreenTea(String description, String content,  User registeredBy) {
+		super(description, content, registeredBy);
+	}
+
+	public String getSourceRegion() {
 		return sourceRegion;
 	}
 
@@ -33,13 +51,6 @@ public class GreenTea extends Item {
 	public void setVariety(String variety) {
 		this.variety = variety;
 	}
-	
-	 public GreenTea( String description, String content,  User registeredBy) {
-	        super( description, content, registeredBy);
-	}
-
-	
-	 
-	 
+ 
 	
 }

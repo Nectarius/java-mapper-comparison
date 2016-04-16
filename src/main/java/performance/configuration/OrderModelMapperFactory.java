@@ -20,7 +20,6 @@ public class OrderModelMapperFactory  {
     private ModelMapper getModelMapper() {
         if (modelMapper == null) {
             modelMapper = new ModelMapper();
-            modelMapper = new ModelMapper();
             modelMapper.addMappings(new PropertyMap<Order, OrderDTO>() {
                 @Override
                 protected void configure() {

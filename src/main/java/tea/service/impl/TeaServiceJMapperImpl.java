@@ -11,6 +11,7 @@ import tea.domain.WhiteTea;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
 import view.BlackTeaView;
+import view.GreenTeaView;
 import view.WhiteTeaView;
 
 /**
@@ -52,5 +53,12 @@ public class TeaServiceJMapperImpl implements TeaService {
 
         return blackTeaView;
     }
+
+    @Override
+   	public GreenTeaView findGreenTea(Long id) {
+   		
+   		
+   		return null;
+   	}
 
 }

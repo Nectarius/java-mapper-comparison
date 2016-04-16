@@ -9,6 +9,7 @@ import tea.mapstruct.TeaMapper;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
 import view.BlackTeaView;
+import view.GreenTeaView;
 import view.WhiteTeaView;
 
 /**
@@ -43,5 +44,12 @@ public class TeaServiceMapStructImpl implements TeaService {
 
         return teaMapper.blackTeaToView(blackTea, isEmployee);
     }
+
+    @Override
+   	public GreenTeaView findGreenTea(Long id) {
+   		
+   		
+   		return null;
+   	}
 
 }
