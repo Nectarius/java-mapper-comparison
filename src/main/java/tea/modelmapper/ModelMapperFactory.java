@@ -10,6 +10,7 @@ import org.springframework.beans.factory.FactoryBean;
 import tea.domain.GreenTea;
 import tea.domain.User;
 import tea.domain.WhiteTea;
+import tea.modelmapper.converters.GreenTeaConverter;
 import view.GreenTeaView;
 import view.WhiteTeaView;
 
@@ -23,20 +24,7 @@ public class ModelMapperFactory implements FactoryBean<ModelMapper> {
     
     private final String  whiteTeaVariety = "White Peony";
     
-    private Converter<GreenTea, GreenTeaView> greenTeaConverter = new Converter<GreenTea, GreenTeaView>() {
-		
-		@Override
-		public GreenTeaView convert(MappingContext<GreenTea, GreenTeaView> context) {
-			
-			GreenTeaView destination = context.getDestination();
-			
-			GreenTea source = context.getSource();
-			
-			destination.setDescription(source.getDescription()+source.getContent());
-			
-			return destination;
-		}
-	};
+    private Converter<GreenTea, GreenTeaView> greenTeaConverter = new GreenTeaConverter() ;
 
     private ModelMapper getModelMapper() {
         if (modelMapper == null) {

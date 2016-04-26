@@ -10,7 +10,7 @@ package view;
 public class GreenTeaView {
 	
 	/**
-	 *   description + content
+	 *   description = description + content
 	 */
 	private String description;
 	

@@ -49,9 +49,10 @@ public class TeaServiceDozerImpl implements TeaService {
 
     @Override
 	public GreenTeaView findGreenTea(Long id) {
-		
-		
-		return null;
+
+        GreenTea greenTea = fakeTeaRepository.findOneGreenTea(id);
+
+        return dozerBeanMapper.map(greenTea, GreenTeaView.class);
 	}
 
 }

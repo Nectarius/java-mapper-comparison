@@ -8,7 +8,9 @@ import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.MappingContext;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 import ma.glasnost.orika.metadata.Type;
+import tea.domain.BlackTea;
 import tea.domain.User;
+import view.BlackTeaView;
 
 
 /**
@@ -38,6 +40,7 @@ public class OrikaMapperFactory implements FactoryBean<MapperFacade> {
     private MapperFactory getMapperFactory() {
         if (mapperFactory == null) {
             mapperFactory = new DefaultMapperFactory.Builder().build();
+
             mapperFactory.getConverterFactory().registerConverter(new RegisteredByConverter());
         }
         return mapperFactory;
