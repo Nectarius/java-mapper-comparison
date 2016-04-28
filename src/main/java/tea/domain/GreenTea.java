@@ -1,5 +1,7 @@
 package tea.domain;
 
+import com.googlecode.jmapper.annotations.JMapConversion;
+
 public class GreenTea extends Item {
 	
 	 private String variety;
@@ -23,6 +25,11 @@ public class GreenTea extends Item {
 		this.sourceCountry = sourceCountry;
         return this;
 	}
+
+    @JMapConversion(from={"description"}, to={"description"})
+    public String conversion(String str){
+        return this.description + this.content;
+    }
 
 	public GreenTea(String description, String content,  User registeredBy) {
 		super(description, content, registeredBy);

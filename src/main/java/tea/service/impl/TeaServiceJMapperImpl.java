@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.googlecode.jmapper.JMapper;
 
 import tea.domain.BlackTea;
+import tea.domain.GreenTea;
 import tea.domain.WhiteTea;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
@@ -26,6 +27,9 @@ public class TeaServiceJMapperImpl implements TeaService {
 
     @Autowired
     private JMapper<BlackTeaView, BlackTea> jMapper;
+
+    @Autowired
+    private JMapper<GreenTeaView, GreenTea> greenTeaJMapper;
 
     @Autowired
     private FakeService fakeService;
@@ -56,9 +60,10 @@ public class TeaServiceJMapperImpl implements TeaService {
 
     @Override
    	public GreenTeaView findGreenTea(Long id) {
-   		
-   		
-   		return null;
+
+        GreenTea greenTea = fakeTeaRepository.findOneGreenTea(id);
+
+        return greenTeaJMapper.getDestination(greenTea);
    	}
 
 }

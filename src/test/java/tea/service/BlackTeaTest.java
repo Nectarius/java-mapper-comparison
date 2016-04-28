@@ -27,19 +27,17 @@ import view.BlackTeaView;
 @ContextConfiguration(locations = { "/application-context.xml" })
 public class BlackTeaTest {
 
-	@Autowired
+	/*@Autowired
 	@Qualifier("teaServiceMapStructImpl")
 	@InjectMocks
-	private TeaService teaService;
+	private TeaService teaService;*/
 
-	/*
-	 * @Autowired
-	 * 
-	 * @Qualifier("teaServiceJMapperImpl")
-	 * 
-	 * @InjectMocks private TeaService teaService;
-	 */
-	
+	  @Autowired
+
+	  @Qualifier("teaServiceJMapperImpl")
+
+	  @InjectMocks private TeaService teaService;
+
 	/*
 	 * @Autowired
 	 * 

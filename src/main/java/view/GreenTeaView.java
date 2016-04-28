@@ -1,17 +1,22 @@
 package view;
 
 
+import com.googlecode.jmapper.annotations.JGlobalMap;
+import com.googlecode.jmapper.annotations.JMap;
+
 /**
  *   { for one to several example }
  *   
  * @author kmolodtsov
  *
  */
+@JGlobalMap
 public class GreenTeaView {
 	
 	/**
 	 *   description = description + content
 	 */
+    @JMap("description")
 	private String description;
 	
 	private String variety;

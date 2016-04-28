@@ -23,7 +23,14 @@
           class="tea.modelmapper.ModelMapperFactory">
     </bean>
 
-    <bean id="jmapper" class="com.googlecode.jmapper.JMapper">
+    <bean id="greenTeaJMapper" class="com.googlecode.jmapper.JMapper">
+        <constructor-arg><value>view.GreenTeaView</value></constructor-arg>
+        <constructor-arg><value>tea.domain.GreenTea</value></constructor-arg>
+
+ <!--       <constructor-arg><value>jmapper-configuration.xml</value></constructor-arg>-->
+    </bean>
+
+    <bean id="jMapper" class="com.googlecode.jmapper.JMapper">
         <constructor-arg><value>view.BlackTeaView</value></constructor-arg>
         <constructor-arg><value>tea.domain.BlackTea</value></constructor-arg>
 

@@ -30,30 +30,26 @@ import view.GreenTeaView;
 @ContextConfiguration(locations = { "/application-context.xml" })
 public class GreenTeaTest {
 
+	  @Autowired
+	  @Qualifier("teaServiceJMapperImpl")
+	  @InjectMocks private TeaService teaService;
+
 	/*@Autowired
 	@Qualifier("teaServiceMapStructImpl")
 	@InjectMocks
 
-	/*
-	 * @Autowired
-	 * 
-	 * @Qualifier("teaServiceJMapperImpl")
-	 * 
-	 * @InjectMocks private TeaService teaService;
-	 */
-	
-	/*
-	 * @Autowired
-	 * 
-	 * @Qualifier("teaServiceDozerImpl")
-	 * 
-	 * @InjectMocks private TeaService teaService;
-	 */
 
-      @Autowired
+
+
+   /*  @Autowired
+	@Qualifier("teaServiceDozerImpl")
+    @InjectMocks
+    private TeaService teaService;*/
+
+  /*    @Autowired
       @Qualifier("teaServiceModelMapperImpl")
       @InjectMocks 
-      private TeaService teaService;
+      private TeaService teaService;*/
 	
 	/*
 	 * @Autowired
@@ -77,9 +73,11 @@ public class GreenTeaTest {
 	}
 
 	@Test
-	public void constantTest() {
+	public void severalFieldsToOneTest() {
 		
 		// http://stackoverflow.com/questions/34297791/with-dozer-is-it-possible-to-map-several-fields-to-one-field
+
+        // If you have control over your legacy data, you could create a type to wrap the individual date fields:
 		
 		// http://www.talangsoft.org/2015/04/20/domain_mapping_with_modelmapper/
 		
