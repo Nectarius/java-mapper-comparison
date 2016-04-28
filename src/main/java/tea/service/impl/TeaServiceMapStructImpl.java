@@ -33,7 +33,9 @@ public class TeaServiceMapStructImpl implements TeaService {
 
         WhiteTea whiteTea = (WhiteTea)fakeTeaRepository.findOne(id);
 
-        return null;
+
+
+        return teaMapper.whiteTeaToView(whiteTea);
     }
 
     @Override

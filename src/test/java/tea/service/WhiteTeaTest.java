@@ -30,22 +30,24 @@ import view.WhiteTeaView;
 @ContextConfiguration(locations = { "/application-context.xml" })
 public class WhiteTeaTest {
 
-
     @Autowired
-    @Qualifier("teaServiceJMapperImpl")
+    @Qualifier("teaServiceMapStructImpl")
     @InjectMocks
     private TeaService teaService;
 
-	/*@Autowired
-	@Qualifier("teaServiceMapStructImpl")
-	@InjectMocks
+   /* @Autowired
+    @Qualifier("teaServiceJMapperImpl")
+    @InjectMocks/*
+
+
+
 
 
 
 
 	
 
-	/*  @Autowired
+	 @Autowired
 
 	  @Qualifier("teaServiceDozerImpl")
 

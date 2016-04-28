@@ -27,6 +27,9 @@ public interface TeaMapper {
     @Mapping(target = "registeredBy", expression = "java(abstractUserMapper.getRegisteredBy(blackTea.getRegisteredBy(), isEmployee))")
     BlackTeaView blackTeaToView(BlackTea blackTea, Boolean isEmployee);
 
+    @Mapping(target = "variety", constant = "White Peony")
+    WhiteTeaView whiteTeaToView(WhiteTea whiteTea);
+
     @Mapping(target = "description", expression = "java(greenTea.getDescription() + greenTea.getContent())")
     GreenTeaView greenTeaToView(GreenTea greenTea);
 
