@@ -26,10 +26,7 @@ public class GreenTea extends Item {
         return this;
 	}
 
-    @JMapConversion(from={"description"}, to={"description"})
-    public String conversion(String str){
-        return this.description + this.content;
-    }
+
 
 	public GreenTea(String description, String content,  User registeredBy) {
 		super(description, content, registeredBy);
@@ -58,6 +55,13 @@ public class GreenTea extends Item {
 	public void setVariety(String variety) {
 		this.variety = variety;
 	}
+
+    @JMapConversion(from={"description"}, to={"description"})
+    public String conversion(String str){
+        return this.description + this.content;
+    }
+
+
  
 	
 }

@@ -1,9 +1,11 @@
 package view;
 
 
+import com.googlecode.jmapper.annotations.JMap;
+import com.googlecode.jmapper.annotations.JMapConversion;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  *  { for Constants Example }
  * 
  * @since 29 March 2016
@@ -11,6 +13,7 @@ package view;
 public class WhiteTeaView {
 
     private String description;
+
 
     private String content;
 
@@ -40,6 +43,5 @@ public class WhiteTeaView {
     public void setContent(String content) {
         this.content = content;
     }
-
 
 }

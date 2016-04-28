@@ -1,7 +1,7 @@
 package tea.domain;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 03 April 2016
  */
 public class BlackTea extends Item {

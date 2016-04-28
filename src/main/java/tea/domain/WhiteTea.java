@@ -1,7 +1,9 @@
 package tea.domain;
 
+import com.googlecode.jmapper.annotations.JMapConversion;
+
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 28 March 2016
  *  
  *  { it will be mention in Constants Example }
@@ -34,6 +36,8 @@ public class WhiteTea extends Item {
         super( description, content, registeredBy);
 
     }
+
+
 
 
 }

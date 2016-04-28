@@ -11,7 +11,7 @@ import tea.domain.WhiteTea;
 
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 29 March 2016
  */
 @Service

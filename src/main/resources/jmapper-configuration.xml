@@ -10,6 +10,17 @@
         </conversion>
     </class>
 
+    <class name="view.WhiteTeaView">
+
+        <attribute name="variety">
+            <value name="description"/>
+        </attribute>
+
+        <conversion name="conversion2" to="variety">
+            return "White Peony";
+        </conversion>
+
+    </class>
 
 
 </jmapper>

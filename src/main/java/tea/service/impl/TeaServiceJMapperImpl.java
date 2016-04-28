@@ -16,7 +16,7 @@ import view.GreenTeaView;
 import view.WhiteTeaView;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 29 March 2016
  */
 @Service
@@ -32,13 +32,16 @@ public class TeaServiceJMapperImpl implements TeaService {
     private JMapper<GreenTeaView, GreenTea> greenTeaJMapper;
 
     @Autowired
+    private JMapper<WhiteTeaView, WhiteTea> whiteTeaJMapper;
+
+    @Autowired
     private FakeService fakeService;
 
     public WhiteTeaView findWhiteTea(Long id){
 
         WhiteTea whiteTea = (WhiteTea)fakeTeaRepository.findOne(id);
+        return whiteTeaJMapper.getDestination(whiteTea);
 
-        return null;
     }
 
     @Override

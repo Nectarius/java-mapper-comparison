@@ -16,7 +16,7 @@ import view.WhiteTeaView;
 
 
 /**
- * Created by adelfiri on 4/7/15.
+ * Created by nefarius on 4/7/15.
  */
 public class ModelMapperFactory implements FactoryBean<ModelMapper> {
 
@@ -29,6 +29,7 @@ public class ModelMapperFactory implements FactoryBean<ModelMapper> {
     private ModelMapper getModelMapper() {
         if (modelMapper == null) {
             modelMapper = new ModelMapper();
+            // for constants example
             modelMapper.addMappings(new PropertyMap<WhiteTea, WhiteTeaView>() {
                 @Override
                 protected void configure() {

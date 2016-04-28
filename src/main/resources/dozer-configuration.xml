@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
     <configuration>
         <date-format>yyyy-MM-dd</date-format>
         <custom-converters> <!-- these are always bi-directional -->
-            <converter type="tea.dozer.converters.GreenTeaConverter" >
+            <converter type="tea.dozer.converters.GreenTeaConverter">
                 <class-a>tea.domain.GreenTea</class-a>
                 <class-b>view.GreenTeaView</class-b>
             </converter>
@@ -16,12 +17,10 @@
         <class-b>view.WhiteTeaView
         </class-b>
 
-      <!--  <field>
-            <a>type</a>
-            <b>type</b>
-            <a-hint>tea.domain.WhiteTeaType</a-hint>
-            <b-hint>tea.domain.WhiteTeaType</b-hint>
-        </field>-->
+        <field custom-converter-param="White Peony" custom-converter="tea.dozer.converters.ConstantsCustomConverter">
+            <a>content</a>
+            <b>variety</b>
+        </field>
 
     </mapping>
 
@@ -40,14 +39,14 @@
       If you have control over your legacy data, you could create a type to wrap the individual date fields:
       If you don't have control over your legacy data then I believe you'd have to write a custom mapper to map MyObject to MyOtherObject-->
 
-<!--    <mapping type="one-way">
-        <class-a>tea.domain.GreenTea</class-a>
-        <class-b>view.GreenTeaView</class-b>
-        <field custom-converter="tea.dozer.EmployeeUserCustomConverter" custom-converter-param="Unknown user">
-            <a>registeredBy</a>
-            <b>registeredBy</b>
-        </field>
-    </mapping>-->
+    <!--    <mapping type="one-way">
+            <class-a>tea.domain.GreenTea</class-a>
+            <class-b>view.GreenTeaView</class-b>
+            <field custom-converter="tea.dozer.EmployeeUserCustomConverter" custom-converter-param="Unknown user">
+                <a>registeredBy</a>
+                <b>registeredBy</b>
+            </field>
+        </mapping>-->
 
     <mapping type="one-way" map-id="for-customer">
         <class-a>tea.domain.BlackTea</class-a>
@@ -57,9 +56,6 @@
             <b>registeredBy</b>
         </field-exclude>
     </mapping>
-    
-
-
 
 
 </mappings>

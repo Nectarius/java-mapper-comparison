@@ -11,7 +11,7 @@ import performance.dto.OrderDTO;
 import performance.dto.ProductDTO;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 31 March 2016
  */
 @Mapper

@@ -12,7 +12,7 @@ import performance.domain.Order;
 import performance.dto.OrderDTO;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 02 April 2016
  */
 public class SmooksMapper {

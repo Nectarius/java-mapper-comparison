@@ -30,6 +30,12 @@
  <!--       <constructor-arg><value>jmapper-configuration.xml</value></constructor-arg>-->
     </bean>
 
+    <bean id="whiteTeaJMapper" class="com.googlecode.jmapper.JMapper">
+        <constructor-arg><value>view.WhiteTeaView</value></constructor-arg>
+        <constructor-arg><value>tea.domain.WhiteTea</value></constructor-arg>
+        <constructor-arg><value>jmapper-configuration.xml</value></constructor-arg>
+    </bean>
+
     <bean id="jMapper" class="com.googlecode.jmapper.JMapper">
         <constructor-arg><value>view.BlackTeaView</value></constructor-arg>
         <constructor-arg><value>tea.domain.BlackTea</value></constructor-arg>

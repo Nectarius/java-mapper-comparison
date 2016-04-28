@@ -6,7 +6,7 @@ import org.mapstruct.NullValueMappingStrategy;
 import org.mapstruct.ReportingPolicy;
 
 /**
- * Created by adelfiri on 4/12/15.
+ * Created by nefarius on 4/12/15.
  */
 @MapperConfig(
         mappingInheritanceStrategy = MappingInheritanceStrategy.AUTO_INHERIT_FROM_CONFIG,

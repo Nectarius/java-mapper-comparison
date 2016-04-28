@@ -14,7 +14,7 @@ import view.GreenTeaView;
 import view.WhiteTeaView;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 29 March 2016
  */
 @Service
@@ -29,14 +29,14 @@ public class TeaServiceDozerImpl implements TeaService {
     @Autowired
     private DozerBeanMapper dozerBeanMapper;
 
-    public WhiteTeaView findWhiteTea(Long id){
+    public WhiteTeaView findWhiteTea(Long id) {
 
-        WhiteTea whiteTea = (WhiteTea)fakeTeaRepository.findOne(id);
+        WhiteTea whiteTea = (WhiteTea) fakeTeaRepository.findOne(id);
 
         return dozerBeanMapper.map(whiteTea, WhiteTeaView.class);
     }
 
-    public BlackTeaView findBlackTeaView(Long id){
+    public BlackTeaView findBlackTeaView(Long id) {
 
         boolean isEmployee = fakeService.getUserSession().isEmployee();
 
@@ -48,11 +48,11 @@ public class TeaServiceDozerImpl implements TeaService {
     }
 
     @Override
-	public GreenTeaView findGreenTea(Long id) {
+    public GreenTeaView findGreenTea(Long id) {
 
         GreenTea greenTea = fakeTeaRepository.findOneGreenTea(id);
 
         return dozerBeanMapper.map(greenTea, GreenTeaView.class);
-	}
+    }
 
 }

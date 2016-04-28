@@ -5,7 +5,7 @@ import org.dozer.DozerConverter;
 import tea.domain.User;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 04 April 2016
  */
 public class EmployeeUserCustomConverter extends DozerConverter<User, String> {

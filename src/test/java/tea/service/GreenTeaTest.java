@@ -18,7 +18,7 @@ import tea.service.impl.FakeService;
 import view.GreenTeaView;
 
 /**
- * @author adelfiri,
+ * @author nefarius,
  *         <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">
  *         Konstantin Molodtsov</a>
  *         
@@ -30,21 +30,21 @@ import view.GreenTeaView;
 @ContextConfiguration(locations = { "/application-context.xml" })
 public class GreenTeaTest {
 
-	  @Autowired
+	/*  @Autowired
 	  @Qualifier("teaServiceJMapperImpl")
-	  @InjectMocks private TeaService teaService;
+	  @InjectMocks private TeaService teaService;*/
 
-	/*@Autowired
+	/* @Autowired
 	@Qualifier("teaServiceMapStructImpl")
 	@InjectMocks
+    private TeaService teaService;*/
 
 
 
-
-   /*  @Autowired
+    @Autowired
 	@Qualifier("teaServiceDozerImpl")
     @InjectMocks
-    private TeaService teaService;*/
+    private TeaService teaService;
 
   /*    @Autowired
       @Qualifier("teaServiceModelMapperImpl")

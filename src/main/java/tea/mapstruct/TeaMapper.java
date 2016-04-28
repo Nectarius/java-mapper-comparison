@@ -6,13 +6,15 @@ import org.mapstruct.Mappings;
 
 
 import tea.domain.BlackTea;
+import tea.domain.GreenTea;
 import tea.domain.WhiteTea;
 
 import view.BlackTeaView;
+import view.GreenTeaView;
 import view.WhiteTeaView;
 
 /**
- * Created by adelfiri on 4/5/15.
+ * Created by nefarius on 4/5/15.
  */
 @Mapper(config = CentralConfig.class, uses = {AbstractUserMapper.class})
 public interface TeaMapper {
@@ -24,6 +26,10 @@ public interface TeaMapper {
 
     @Mapping(target = "registeredBy", expression = "java(abstractUserMapper.getRegisteredBy(blackTea.getRegisteredBy(), isEmployee))")
     BlackTeaView blackTeaToView(BlackTea blackTea, Boolean isEmployee);
+
+    @Mapping(target = "description", expression = "java(greenTea.getDescription() + greenTea.getContent())")
+    GreenTeaView greenTeaToView(GreenTea greenTea);
+
 
 
 }

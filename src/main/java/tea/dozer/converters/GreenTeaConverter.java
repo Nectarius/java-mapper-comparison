@@ -6,7 +6,7 @@ import tea.domain.GreenTea;
 import view.GreenTeaView;
 
 /**
- * @author adelfiri, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 27 April 2016
  */
 public class GreenTeaConverter  extends DozerConverter<GreenTea, GreenTeaView> {
