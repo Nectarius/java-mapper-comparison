@@ -1,5 +1,7 @@
 package tea.service.impl;
 
+import java.util.HashMap;
+
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,11 +9,14 @@ import org.springframework.stereotype.Service;
 import tea.domain.BlackTea;
 import tea.domain.GreenTea;
 import tea.domain.WhiteTea;
+import tea.domain.YellowTea;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
 import view.BlackTeaView;
 import view.GreenTeaView;
+import view.OolongTeaView;
 import view.WhiteTeaView;
+import view.YellowTeaView;
 
 /**
  * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
@@ -53,6 +58,21 @@ public class TeaServiceDozerImpl implements TeaService {
         GreenTea greenTea = fakeTeaRepository.findOneGreenTea(id);
 
         return dozerBeanMapper.map(greenTea, GreenTeaView.class);
+    }
+
+    @Override
+    public OolongTeaView findOolongTea(Long id) {
+
+
+        return null;
+    }
+
+    @Override
+    public YellowTeaView findYellowTea(Long id) {
+
+        YellowTea yellowTea = fakeTeaRepository.findOneYellowTea(id);
+
+        return dozerBeanMapper.map(yellowTea, YellowTeaView.class);
     }
 
 }

@@ -33,6 +33,19 @@
         </field>
     </mapping>
 
+    <mapping>
+        <class-a>tea.domain.YellowTea</class-a>
+        <class-b>view.YellowTeaView</class-b>
+        <field>
+            <a key="primaryProperties" map-get-method="get" set-method="addPropValue">propValues</a>
+            <b>primaryProperties</b>
+        </field>
+        <field>
+            <a key="secondaryProperties" map-get-method="get" set-method="addPropValue">propValues</a>
+            <b>secondaryProperties</b>
+        </field>
+    </mapping>
+
     <!-- Dozer doesnt really support mapping multiple fields into a single field as in your use case.
     One thing you may want to consider(if possible)
      is to wrap the 3 fields in a custom container type of object.

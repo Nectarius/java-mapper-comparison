@@ -22,5 +22,21 @@
 
     </class>
 
+    <class name="tea.domain.OolongTea">
+        <global>
+            <value name="map"/>
+            <classes>
+                <class name="view.OolongTeaView"/>
+            </classes>
+        </global>
+        <conversion name="fromMapToAll" from="map" type="DYNAMIC">
+            return (${destination.type}) ${source}.get("${destination.name}");
+        </conversion>
+        <conversion name="fromAllToMap" to="map" type="DYNAMIC">
+            ${destination}.put("${source.name}",${source});
+            return ${destination};
+        </conversion>
+    </class>
+
 
 </jmapper>

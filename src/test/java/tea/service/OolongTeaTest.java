@@ -2,6 +2,8 @@ package tea.service;
 
 import static org.mockito.Mockito.when;
 
+import java.util.HashMap;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,24 +15,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.testng.Assert;
-
 import tea.service.impl.FakeService;
-import view.WhiteTeaView;
 
 /**
- * @author nefarius,
- *         <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">
- *         Konstantin Molodtsov</a>
- *         
- *         Constant test
- *         
- * @since 03 April 2016
+ * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ * @since 01 May 2016
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/application-context.xml" })
-public class WhiteTeaTest {
+public class OolongTeaTest {
 
-   /* @Autowired
+     /* @Autowired
     @Qualifier("teaServiceMapStructImpl")
     @InjectMocks
     private TeaService teaService; */
@@ -39,26 +34,17 @@ public class WhiteTeaTest {
     @Qualifier("teaServiceJMapperImpl")
     @InjectMocks/*
 
-
-
-
-
-
-
-	
-
 	 @Autowired
 
 	  @Qualifier("teaServiceDozerImpl")
 
 	  @InjectMocks private TeaService teaService; */
 
+    @Autowired
+    @Qualifier("teaServiceJMapperImpl")
+    @InjectMocks
+    private TeaService teaService;
 
-      @Autowired
-      @Qualifier("teaServiceModelMapperImpl")
-      @InjectMocks 
-      private TeaService teaService;
-	
 
 	 /* @Autowired
 	  @Qualifier("teaServiceOrikaImpl")
@@ -66,32 +52,28 @@ public class WhiteTeaTest {
       private TeaService teaService;*/
 
 
-	@Mock
-	private FakeService fakeService;
+    @Mock
+    private FakeService fakeService;
 
-	@Before
-	public void initMocks() {
+    @Before
+    public void initMocks() {
 
-		MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.initMocks(this);
 
-		UserSession userSession = new UserSession();
-		userSession.setEmployee(true);
-		when(fakeService.getUserSession()).thenReturn(userSession);
-	}
+        UserSession userSession = new UserSession();
+        userSession.setEmployee(true);
+        when(fakeService.getUserSession()).thenReturn(userSession);
+    }
 
-	@Test
-	public void constantTest() {
+    @Test
+    public void constantTest() {
 
-		// http://stackoverflow.com/questions/858519/constants-in-dozer-mappings
+        HashMap<String, Object> hashMap = teaService.findOolongTea(35l).getMap();
 
-		WhiteTeaView whiteTeaView = teaService.findWhiteTea(25l);
-		
-		String variety = whiteTeaView.getVariety();
+        Object variety = hashMap.get("variety");
 
-		Assert.assertEquals(variety, "White Peony");
+        Assert.assertEquals(variety, "Cassia");
 
-
-
-	}
+    }
 
 }

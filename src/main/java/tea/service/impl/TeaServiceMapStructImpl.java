@@ -1,5 +1,7 @@
 package tea.service.impl;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +13,9 @@ import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
 import view.BlackTeaView;
 import view.GreenTeaView;
+import view.OolongTeaView;
 import view.WhiteTeaView;
+import view.YellowTeaView;
 
 /**
  * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
@@ -56,5 +60,15 @@ public class TeaServiceMapStructImpl implements TeaService {
         return teaMapper.greenTeaToView(greenTea);
 
    	}
+
+    @Override
+    public OolongTeaView findOolongTea(Long id) {
+        return null;
+    }
+
+    @Override
+    public YellowTeaView findYellowTea(Long id) {
+        return null;
+    }
 
 }

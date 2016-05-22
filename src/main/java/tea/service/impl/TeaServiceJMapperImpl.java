@@ -1,5 +1,8 @@
 package tea.service.impl;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,15 +11,20 @@ import com.googlecode.jmapper.JMapper;
 
 import tea.domain.BlackTea;
 import tea.domain.GreenTea;
+import tea.domain.OolongTea;
 import tea.domain.WhiteTea;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
 import view.BlackTeaView;
 import view.GreenTeaView;
+import view.OolongTeaView;
 import view.WhiteTeaView;
+import view.YellowTeaView;
 
 /**
  * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
+ *
+            №13830 от 22.05.2016 22:45:41
  * @since 29 March 2016
  */
 @Service
@@ -33,6 +41,9 @@ public class TeaServiceJMapperImpl implements TeaService {
 
     @Autowired
     private JMapper<WhiteTeaView, WhiteTea> whiteTeaJMapper;
+
+    @Autowired
+    private JMapper<OolongTeaView, OolongTea> oolongTeaJMapper;
 
     @Autowired
     private FakeService fakeService;
@@ -68,5 +79,18 @@ public class TeaServiceJMapperImpl implements TeaService {
 
         return greenTeaJMapper.getDestination(greenTea);
    	}
+
+    @Override
+    public OolongTeaView findOolongTea(Long id) {
+
+        OolongTea oolongTea = fakeTeaRepository.findOneOolongTea(35l);
+
+        return oolongTeaJMapper.getDestination(oolongTea);
+    }
+
+    @Override
+    public YellowTeaView findYellowTea(Long id) {
+        return null;
+    }
 
 }

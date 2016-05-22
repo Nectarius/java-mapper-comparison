@@ -10,7 +10,9 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import ma.glasnost.orika.metadata.Type;
 import tea.domain.BlackTea;
 import tea.domain.User;
+import tea.domain.WhiteTea;
 import view.BlackTeaView;
+import view.WhiteTeaView;
 
 
 /**
@@ -30,6 +32,16 @@ public class OrikaMapperFactory implements FactoryBean<MapperFacade> {
         }
     }
 
+  /*  public class ConstantsConverter extends CustomConverter<String, String> {
+
+
+        @Override
+        public String convert(String source, Type<? extends String> destinationType, MappingContext mappingContext) {
+
+            return "White Peony";
+        }
+    }*/
+
     private MapperFacade getMapperFacade() {
         if(mapperFacade == null) {
             mapperFacade = getMapperFactory().getMapperFacade();
@@ -40,6 +52,11 @@ public class OrikaMapperFactory implements FactoryBean<MapperFacade> {
     private MapperFactory getMapperFactory() {
         if (mapperFactory == null) {
             mapperFactory = new DefaultMapperFactory.Builder().build();
+
+
+            //mapperFactory.getConverterFactory().registerConverter("constantConverter", new ConstantsConverter());
+
+           // mapperFactory.classMap( WhiteTea.class, WhiteTeaView.class ).fieldMap("description", "variety").converter("constantConverter").add();
 
             mapperFactory.getConverterFactory().registerConverter(new RegisteredByConverter());
         }

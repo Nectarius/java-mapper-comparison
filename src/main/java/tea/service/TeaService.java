@@ -1,8 +1,12 @@
 package tea.service;
 
+import java.util.HashMap;
+
 import view.BlackTeaView;
 import view.GreenTeaView;
+import view.OolongTeaView;
 import view.WhiteTeaView;
+import view.YellowTeaView;
 
 /**
  * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
@@ -16,6 +20,10 @@ public interface TeaService {
      BlackTeaView findBlackTeaView(Long id);
 
      GreenTeaView findGreenTea(Long id);
+
+     OolongTeaView findOolongTea(Long id);
+
+     YellowTeaView findYellowTea(Long id);
 
 
 }
