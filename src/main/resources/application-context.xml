@@ -23,6 +23,13 @@
           class="tea.modelmapper.ModelMapperFactory">
     </bean>
 
+    <bean id="yellowTeaJMapper" class="com.googlecode.jmapper.JMapper">
+        <constructor-arg><value>view.YellowTeaView</value></constructor-arg>
+        <constructor-arg><value>tea.domain.YellowTea</value></constructor-arg>
+        <constructor-arg><value>jmapper-configuration.xml</value></constructor-arg>
+        <!--       <constructor-arg><value>jmapper-configuration.xml</value></constructor-arg>-->
+    </bean>
+
     <bean id="oolongTeaJMapper" class="com.googlecode.jmapper.JMapper">
         <constructor-arg><value>view.OolongTeaView</value></constructor-arg>
         <constructor-arg><value>tea.domain.OolongTea</value></constructor-arg>
@@ -49,6 +56,8 @@
 
         <constructor-arg><value>jmapper-configuration.xml</value></constructor-arg>
     </bean>
+
+
 
     <bean id="mapperFacade"
           class="tea.orika.OrikaMapperFactory">

@@ -1,0 +1,49 @@
+collection mapping
+
+ModelMapper :
+
+Yes - ModelMapper supports Collection mapping.
+ If the source and destination object graphs are similar,
+  ModelMapper will automatically map everything for you.
+   If they're a bit different, where properties from the source
+    side are moved into a collection somewhere else on the destination side,
+     you may need to define a custom PropertyMap
+
+
+Here's one approach:
+
+    modelMapper.addMappings(new PropertyMap<Configuration, ConfigurationDTO>() {
+      @Override
+      protected void configure() {
+        Converter<List<Location>, List<Long>> locationConverter = new Converter<List<Location>, List<Long>>() {
+          public List<Long> convert(MappingContext<List<Location>, List<Long>> context) {
+            List<Long> result = new ArrayList<Long>();
+            for (Location loc : context.getSource())
+              result.add(loc.id);
+            return result;
+          }
+        };
+
+        using(locationConverter).map(source.getLocations()).setLocationIds(null);
+      }
+    });
+
+map(source.getLocations()).setLocationIds(null);
+
+////////////////////////////////////////////////
+
+I should also mention, as an alternative to creating a Converter for that specific property mapping, you can create a more general purpose Converter between Location and Long:
+
+    modelMapper.addConverter(new Converter<Location, Long>() {
+      public Long convert(MappingContext<Location, Long> context) {
+        return context.getSource().id;
+      }
+    });
+
+Note, there was an issue effecting converters to types such as Long which is fixed in the current master branch, but has been released yet.
+
+This this approach you'll still need a mapping from Configuration.locations->Configuration.setLocationIds:
+
+map(source.getLocations()).setLocationIds(null);
+
+////////////////////////////////////////////////////////

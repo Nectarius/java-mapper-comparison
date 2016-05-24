@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import tea.domain.BlackTea;
 import tea.domain.GreenTea;
 import tea.domain.WhiteTea;
+import tea.domain.YellowTea;
 import tea.mapstruct.TeaMapper;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
@@ -68,7 +69,9 @@ public class TeaServiceMapStructImpl implements TeaService {
 
     @Override
     public YellowTeaView findYellowTea(Long id) {
-        return null;
+        YellowTea yellowTea = fakeTeaRepository.findOneYellowTea(id);
+
+        return teaMapper.yellowTeaToView(yellowTea);
     }
 
 }

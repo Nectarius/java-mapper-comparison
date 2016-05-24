@@ -11,6 +11,10 @@ public class YellowTea extends Item {
 
     private Map<String, PropertyValue> propValues = new HashMap<String, PropertyValue>();
 
+    public void setPropValues(Map<String, PropertyValue> propValues) {
+        this.propValues = propValues;
+    }
+
     public Map<String,PropertyValue> getPropValues() {
         return propValues;
     }

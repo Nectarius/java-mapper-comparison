@@ -22,6 +22,16 @@
 
     </class>
 
+
+    <class name="view.YellowTeaView">
+        <global>
+            <excluded>
+                <attribute name = "primaryProperties"/>
+                <attribute name = "secondaryProperties"/>
+            </excluded>
+        </global>
+    </class>
+
     <class name="tea.domain.OolongTea">
         <global>
             <value name="map"/>

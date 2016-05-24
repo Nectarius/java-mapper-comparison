@@ -13,6 +13,7 @@ import tea.domain.BlackTea;
 import tea.domain.GreenTea;
 import tea.domain.OolongTea;
 import tea.domain.WhiteTea;
+import tea.domain.YellowTea;
 import tea.repository.FakeTeaRepository;
 import tea.service.TeaService;
 import view.BlackTeaView;
@@ -41,6 +42,9 @@ public class TeaServiceJMapperImpl implements TeaService {
 
     @Autowired
     private JMapper<WhiteTeaView, WhiteTea> whiteTeaJMapper;
+
+    @Autowired
+    private JMapper<YellowTeaView, YellowTea> yellowTeaJMapper;
 
     @Autowired
     private JMapper<OolongTeaView, OolongTea> oolongTeaJMapper;
@@ -90,7 +94,10 @@ public class TeaServiceJMapperImpl implements TeaService {
 
     @Override
     public YellowTeaView findYellowTea(Long id) {
-        return null;
+
+        YellowTea yellowTea = fakeTeaRepository.findOneYellowTea(id);
+
+        return yellowTeaJMapper.getDestination(yellowTea);
     }
 
 }
