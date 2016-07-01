@@ -15,6 +15,7 @@ import ma.glasnost.orika.MapperFacade;
 import performance.configuration.OrderMapStructMapper;
 import performance.configuration.OrderModelMapperFactory;
 import performance.configuration.OrderOrikaMapperFactory;
+import performance.configuration.OrderSelmaMapper;
 import performance.configuration.SmooksMapper;
 import performance.domain.Address;
 import performance.domain.Customer;
@@ -44,6 +45,7 @@ public class Comparison {
         validate(orikaMapper, order);
         validate(jMapperMapper, order);
         validate(mapStructMapper, order);
+        validate(selmaMapper, order);
      /*   validate(smooksMapper, order);*/
 
        for (int i2 = 0; i2 < 10; i2++) {
@@ -52,6 +54,7 @@ public class Comparison {
             iterate(orikaMapper, "Orika:   ", order);
             iterate(jMapperMapper, "jMapper:   ", order);
             iterate(mapStructMapper, "MapStruct:   ", order);
+           iterate(selmaMapper, "Selma:   ", order);
           /*  iterate(smooksMapper, "SmooksMapper:   ", order);*/
             System.out.println();
         }
@@ -91,6 +94,13 @@ public class Comparison {
             return mapper.getDestination(source);
         }
 
+    };
+
+    static final OrderMapper selmaMapper = new OrderMapper() {
+
+        public OrderDTO map(Order source) {
+            return OrderSelmaMapper.INSTANCE.map(source);
+        }
     };
 
     static final OrderMapper mapStructMapper = new OrderMapper() {

@@ -373,6 +373,23 @@
 			<version>${org.modelmapper.version}</version>
 		</dependency>
 
+        <!-- Selma -->
+
+        <!-- scope provided because the processor is only needed at compile time-->
+       <!-- <dependency>
+            <groupId>fr.xebia.extras</groupId>
+            <artifactId>selma-processor</artifactId>
+            <version>${selma.version}</version>
+            <scope>provided</scope>
+        </dependency>-->
+
+        <!-- This is the only real dependency you will have in your binaries -->
+        <dependency>
+            <groupId>fr.xebia.extras</groupId>
+            <artifactId>selma</artifactId>
+            <version>${selma.version}</version>
+        </dependency>
+
 		<!-- Map Struct -->
 
 		<dependency>
@@ -380,11 +397,11 @@
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>
 		</dependency>
-		<dependency>
+	<!--	<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct-processor</artifactId>
 			<version>${org.mapstruct.version}</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
@@ -437,14 +454,51 @@
 					</archive>
 				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+                <version>2.2.4</version>
+                <configuration>
+                    <defaultOutputDirectory>
+                        ${project.build.directory}/generated-sources
+                    </defaultOutputDirectory>
+                    <processors>
+                        <processor>org.mapstruct.ap.MappingProcessor</processor>
+                        <processor>fr.xebia.extras.selma.codegen.MapperProcessor</processor>
+                    </processors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>process</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.mapstruct</groupId>
+                        <artifactId>mapstruct-processor</artifactId>
+                        <version>${org.mapstruct.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>fr.xebia.extras</groupId>
+                        <artifactId>selma-processor</artifactId>
+                        <version>${selma.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+           <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <showWarnings>true</showWarnings>
+                    <optimize>true</optimize>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>-->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.2</version>
@@ -526,6 +580,8 @@
 		</plugins>
 	</build>
 
+
+
 	<properties>
 		<h2.version>1.3.173</h2.version>
 		<mockito.version>2.0.2-beta</mockito.version>
@@ -541,6 +597,7 @@
 		<org.orika.version>1.5.0-beta0</org.orika.version>
 		<net.sf.dozer.version>5.5.1</net.sf.dozer.version>
 		<smooks.version>1.6</smooks.version>
+        <selma.version>0.14</selma.version>
 
 	</properties>
 </project>
