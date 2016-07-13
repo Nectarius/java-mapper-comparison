@@ -34,7 +34,7 @@ public class BlackTeaTest {
 
 	  @Autowired
 
-	  @Qualifier("teaServiceJMapperImpl")
+	  @Qualifier("teaServiceSelmaImpl")
 
 	  @InjectMocks private TeaService teaService;
 

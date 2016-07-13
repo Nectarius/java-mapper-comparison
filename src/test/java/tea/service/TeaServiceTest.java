@@ -12,6 +12,8 @@ import view.WhiteTeaView;
 /**
  * @author nefarius, <a href="mailto:Konstantin.Molodtsov@returnonintelligence.com">Konstantin Molodtsov</a>
  * @since 29 March 2016
+ *
+ *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"/application-context.xml"})

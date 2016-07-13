@@ -13,6 +13,7 @@ import tea.domain.OolongTea;
 import tea.domain.WhiteTea;
 import tea.domain.YellowTea;
 import tea.repository.FakeTeaRepository;
+import tea.selma.TeaMapper;
 import tea.service.TeaService;
 import view.BlackTeaView;
 import view.GreenTeaView;
@@ -25,13 +26,13 @@ import view.YellowTeaView;
  * @since 29 March 2016
  */
 @Service
-public class TeaServiceModelMapperImpl implements TeaService {
+public class TeaServiceSelmaImpl implements TeaService {
 
     @Autowired
     private FakeTeaRepository fakeTeaRepository;
 
     @Autowired
-    private ModelMapper modelMapper;
+    private TeaMapper teaMapper;
 
     @Autowired
     private FakeService fakeService;
@@ -40,7 +41,7 @@ public class TeaServiceModelMapperImpl implements TeaService {
 
         WhiteTea whiteTea = (WhiteTea)fakeTeaRepository.findOne(id);
 
-        return modelMapper.map(whiteTea, WhiteTeaView.class);
+        return teaMapper.whiteTeaToView(whiteTea);
     }
 
     @Override
@@ -50,45 +51,26 @@ public class TeaServiceModelMapperImpl implements TeaService {
 
         BlackTea blackTea = fakeTeaRepository.findOneBlackTea(id);
 
-        BlackTeaView blackTeaView = modelMapper.map(blackTea, BlackTeaView.class);
-
-        if(!isEmployee){
-            // !!!!!!!
-            blackTeaView.setRegisteredBy("");
-        }
-
-        return blackTeaView;
+        return teaMapper.blackTeaToView(blackTea, isEmployee);
     }
 
-	@Override
-	public GreenTeaView findGreenTea(Long id) {
-		
-		GreenTea greenTea = fakeTeaRepository.findOneGreenTea(id);
-		
-		return modelMapper.map(greenTea, GreenTeaView.class);
-	}
+    @Override
+    public GreenTeaView findGreenTea(Long id) {
+
+        GreenTea greenTea = fakeTeaRepository.findOneGreenTea(id);
+
+        return teaMapper.greenTeaToView(greenTea);
+    }
 
     @Override
     public OolongTeaView findOolongTea(Long id) {
-
-        OolongTea oolongTea = fakeTeaRepository.findOneOolongTea(35l);
-
-        HashMap hashMap = modelMapper.map(oolongTea, LinkedHashMap.class);
-
-        OolongTeaView oolongTeaView = new OolongTeaView();
-
-        oolongTeaView.setMap(hashMap);
-
-        return oolongTeaView;
+        return null;
     }
 
     @Override
     public YellowTeaView findYellowTea(Long id) {
-
-        YellowTea yellowTea = fakeTeaRepository.findOneYellowTea(id);
-
-        return modelMapper.map(yellowTea, YellowTeaView.class);
-
+        return null;
     }
+
 
 }

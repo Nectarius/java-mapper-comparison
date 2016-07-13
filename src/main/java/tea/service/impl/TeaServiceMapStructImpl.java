@@ -38,8 +38,6 @@ public class TeaServiceMapStructImpl implements TeaService {
 
         WhiteTea whiteTea = (WhiteTea)fakeTeaRepository.findOne(id);
 
-
-
         return teaMapper.whiteTeaToView(whiteTea);
     }
 

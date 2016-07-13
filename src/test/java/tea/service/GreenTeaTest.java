@@ -46,10 +46,15 @@ public class GreenTeaTest {
     @InjectMocks
     private TeaService teaService;*/
 
-     @Autowired
+/*     @Autowired
       @Qualifier("teaServiceModelMapperImpl")
       @InjectMocks 
-      private TeaService teaService;
+      private TeaService teaService;*/
+
+    @Autowired
+    @Qualifier("teaServiceSelmaImpl")
+    @InjectMocks
+    private TeaService teaService;
 	
 
 	/*   @Autowired

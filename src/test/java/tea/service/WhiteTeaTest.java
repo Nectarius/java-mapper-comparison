@@ -39,14 +39,6 @@ public class WhiteTeaTest {
     @Qualifier("teaServiceJMapperImpl")
     @InjectMocks/*
 
-
-
-
-
-
-
-	
-
 	 @Autowired
 
 	  @Qualifier("teaServiceDozerImpl")
@@ -55,7 +47,7 @@ public class WhiteTeaTest {
 
 
       @Autowired
-      @Qualifier("teaServiceModelMapperImpl")
+      @Qualifier("teaServiceSelmaImpl")
       @InjectMocks 
       private TeaService teaService;
 	

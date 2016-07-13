@@ -9,6 +9,7 @@
     <context:component-scan base-package="tea.service"/>
     <context:component-scan base-package="tea.repository"/>
     <context:component-scan base-package="tea.mapstruct"/>
+    <context:component-scan base-package="tea.selma"/>
 
     <bean id="dozerBeanMapper" class="org.dozer.DozerBeanMapper">
         <property name="mappingFiles">

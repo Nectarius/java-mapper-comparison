@@ -45,7 +45,7 @@ public class YellowTeaTest {
 	  @InjectMocks private TeaService teaService; */
 
     @Autowired
-    @Qualifier("teaServiceMapStructImpl")
+    @Qualifier("teaServiceModelMapperImpl")
     @InjectMocks
     private TeaService teaService;
 
