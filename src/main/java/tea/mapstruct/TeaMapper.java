@@ -33,9 +33,6 @@ public interface TeaMapper {
     @Mapping(source = "registeredBy", target = "registeredBy")
     BlackTeaView blackTeaToView(BlackTea blackTea);
 
-    /*@Mapping(target = "registeredBy", expression = "java(abstractUserMapper.getRegisteredBy(blackTea.getRegisteredBy(), isEmployee))")
-    BlackTeaView blackTeaToView(BlackTea blackTea, Boolean isEmployee);*/
-
     BlackTeaView blackTeaToView(BlackTea blackTea, Boolean isEmployee);
 
     @Mapping(target = "variety", constant = "White Peony")
@@ -51,7 +48,7 @@ public interface TeaMapper {
     @Mapping(target = "secondaryProperties", expression = "java(propertyValueToView(yellowTea.getPropValues().get(\"secondaryProperties\")))")})
     YellowTeaView yellowTeaToView(YellowTea yellowTea);
 
-
-
+    /*@Mapping(target = "registeredBy", expression = "java(abstractUserMapper.getRegisteredBy(blackTea.getRegisteredBy(), isEmployee))")
+    BlackTeaView blackTeaToView(BlackTea blackTea, Boolean isEmployee);*/
 
 }

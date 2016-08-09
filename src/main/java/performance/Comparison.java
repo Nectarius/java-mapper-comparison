@@ -42,7 +42,7 @@ public class Comparison {
         // Warm up to initialize mapper internals
         validate(modelMapper, order);
         validate(dozerMapper, order);
-        validate(orikaMapper, order);
+/*        validate(orikaMapper, order);*/
         validate(jMapperMapper, order);
         validate(mapStructMapper, order);
         validate(selmaMapper, order);
@@ -51,7 +51,7 @@ public class Comparison {
        for (int i2 = 0; i2 < 10; i2++) {
             iterate(modelMapper, "ModelMapper:  ", order);
             iterate(dozerMapper, "Dozer:   ", order);
-            iterate(orikaMapper, "Orika:   ", order);
+   /*         iterate(orikaMapper, "Orika:   ", order);*/
             iterate(jMapperMapper, "jMapper:   ", order);
             iterate(mapStructMapper, "MapStruct:   ", order);
            iterate(selmaMapper, "Selma:   ", order);

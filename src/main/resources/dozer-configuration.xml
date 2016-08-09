@@ -46,11 +46,20 @@
         </field>
     </mapping>
 
+    <mapping type="one-way" map-id="for-customer">
+        <class-a>tea.domain.BlackTea</class-a>
+        <class-b>view.BlackTeaView</class-b>
+        <field-exclude>
+            <a>registeredBy</a>
+            <b>registeredBy</b>
+        </field-exclude>
+    </mapping>
+
     <!-- Dozer doesnt really support mapping multiple fields into a single field as in your use case.
-    One thing you may want to consider(if possible)
-     is to wrap the 3 fields in a custom container type of object.
-      If you have control over your legacy data, you could create a type to wrap the individual date fields:
-      If you don't have control over your legacy data then I believe you'd have to write a custom mapper to map MyObject to MyOtherObject-->
+One thing you may want to consider(if possible)
+ is to wrap the 3 fields in a custom container type of object.
+  If you have control over your legacy data, you could create a type to wrap the individual date fields:
+  If you don't have control over your legacy data then I believe you'd have to write a custom mapper to map MyObject to MyOtherObject-->
 
     <!--    <mapping type="one-way">
             <class-a>tea.domain.GreenTea</class-a>
@@ -60,15 +69,6 @@
                 <b>registeredBy</b>
             </field>
         </mapping>-->
-
-    <mapping type="one-way" map-id="for-customer">
-        <class-a>tea.domain.BlackTea</class-a>
-        <class-b>view.BlackTeaView</class-b>
-        <field-exclude>
-            <a>registeredBy</a>
-            <b>registeredBy</b>
-        </field-exclude>
-    </mapping>
 
 
 </mappings>
